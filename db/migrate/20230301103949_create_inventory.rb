@@ -3,7 +3,7 @@ class CreateInventory < ActiveRecord::Migration[6.1]
     create_table :inventories do |t|
       t.string :name
       t.integer :quantity
-      t.datetime :expiration date
+      t.datetime :expiration_date
     end
   end
 end
