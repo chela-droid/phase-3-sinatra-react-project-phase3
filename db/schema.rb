@@ -10,19 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_01_104007) do
-
-  create_table "inventories", force: :cascade do |t|
-    t.string "name"
-    t.integer "quantity"
-    t.datetime "expiration_date"
-  end
-
-  create_table "patients", force: :cascade do |t|
-    t.string "name"
-    t.integer "age"
-    t.string "address"
-    t.integer "inventory_id"
-  end
+ActiveRecord::Schema.define(version: 0) do
 
 end
