@@ -9,8 +9,8 @@ class ApplicationController < Sinatra::Base
   inventory.to_json()
   end
 
-  get "/inventory/:pk" do
-  inventory = Inventory.find_by(id: params[:pk])
+  get "/inventory/:id" do
+  inventory = Inventory.find_by(id: params[:id])
   inventory.to_json()
   end
   # posting
@@ -28,5 +28,7 @@ class ApplicationController < Sinatra::Base
   }.to_json()
 
   end
+  # post
+  patch "inventory/update/:id"
 
 end
