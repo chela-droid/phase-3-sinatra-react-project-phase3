@@ -29,6 +29,25 @@ class ApplicationController < Sinatra::Base
 
   end
   # post
-  patch "inventory/update/:id"
+  patch "/inventory/update/:id" do
+  inventory = Inventory.find_by(id: params[:id])
+
+  inventory.update(
+    name: params[:name],
+    quantity: params[:quantity],
+    expiration_date: params[:expiration_date]
+  )
+  inventory.to_json()
+  end
+  # delete
+
+  delete "/inventory/:id" do
+  inventory = Inventory.find_by(id: params[:id])
+  inventory.destroy
+  {
+    "message":"successfully deleted #{:id}",
+    "Status": "HTTP_Status_OK"
+  }.to_json
+  end
 
 end
