@@ -16,7 +16,7 @@ class ApplicationController < Sinatra::Base
   # posting
   post "/inventory/" do
   inventory = Inventory.create(
-    name:params[:name],
+    medicine_name:params[:medicine_name],
     quantity:params[:quantity],
     expiration_date:params[:expiration_date],
   )
@@ -28,12 +28,12 @@ class ApplicationController < Sinatra::Base
   }.to_json()
 
   end
-  # post
+  # patch
   patch "/inventory/update/:id" do
   inventory = Inventory.find_by(id: params[:id])
 
   inventory.update(
-    name: params[:name],
+    medicine_name: params[:medicine_name],
     quantity: params[:quantity],
     expiration_date: params[:expiration_date]
   )

@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2023_03_01_104007) do
 
   create_table "inventories", force: :cascade do |t|
-    t.string "name"
+    t.string "medicine_name"
     t.integer "quantity"
     t.datetime "expiration_date"
   end
