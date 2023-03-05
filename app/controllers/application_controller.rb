@@ -5,8 +5,8 @@ class ApplicationController < Sinatra::Base
   get "/inventory" do
     # { message: "caroline!" }.to_json
   inventory = Inventory.all
-  p inventory
-  inventory.to_json()
+
+  inventory.to_json
   end
 
   get "/inventory/:id" do
@@ -14,11 +14,11 @@ class ApplicationController < Sinatra::Base
   inventory.to_json()
   end
   # posting
-  post "/inventory/" do
+  post "/inventory" do
   inventory = Inventory.create(
-    medicine_name:params[:medicine_name],
-    quantity:params[:quantity],
-    expiration_date:params[:expiration_date],
+    medicine_name: params[:medicine_name],
+    quantity: params[:quantity],
+    expiration_date: params[:expiration_date],
   )
   inventory.save()
 
