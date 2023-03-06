@@ -3,7 +3,7 @@ class ApplicationController < Sinatra::Base
   
   # Add your routes here
   get "/inventory" do
-    # { message: "caroline!" }.to_json
+    # { message: "caroline!" }.to_jsonC
   inventory = Inventory.all
 
   inventory.to_json
